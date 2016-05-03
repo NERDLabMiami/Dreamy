@@ -26,11 +26,14 @@ public class PlayerBehavior : MonoBehaviour {
 			Debug.Log ("Submitted New Player");
 		}
 	}
-	public IEnumerator submitEvent(int eventId, string subtype, string beliefId, string characterId) {
+	public IEnumerator submitEvent(int eventId, string subtype, string beliefId, string characterId, string dialogId = "none") {
 
 		WWWForm form = new WWWForm ();
 		form.AddField("qualtrics_id", PlayerPrefs.GetString("qualtrics_id"));
 		form.AddField("event_id", eventId);
+
+		form.AddField ("dialog_id", dialogId);
+
 		if (beliefId.Length > 0) {
 			form.AddField("belief_id", beliefId);
 			Debug.Log("Belief Exists");
@@ -65,10 +68,10 @@ public class PlayerBehavior : MonoBehaviour {
 		}
 	}
 
-	public void trackEvent(int eventId, string subtype, string beliefId, string characterId) {
+	public void trackEvent(int eventId, string subtype, string beliefId, string characterId, string dialogId = "none") {
 		Debug.Log("Called Track Event");
 
-		StartCoroutine(submitEvent(eventId, subtype, beliefId, characterId));	
+		StartCoroutine(submitEvent(eventId, subtype, beliefId, characterId, dialogId));	
 	}
 
 

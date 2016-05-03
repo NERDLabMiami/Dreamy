@@ -11,6 +11,7 @@ public class Message {
 	public string passage;
 	public string body;
 	public string belief = "";
+	public string dialog_id;
 	public int index;
 	public List<Response> responses;
 

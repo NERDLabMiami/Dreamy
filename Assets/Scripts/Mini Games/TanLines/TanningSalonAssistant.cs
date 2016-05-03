@@ -51,7 +51,7 @@ public class TanningSalonAssistant : MonoBehaviour {
 		if (conversationIndex == 5) {
 			Time.timeScale = 1.0f;
 			player.loadSceneNumber (1);
-			GetComponent<PlayerBehavior>().trackEvent(4, "TANNED","none", "Ray");
+			GetComponent<PlayerBehavior>().trackEvent(4, "TANNED","none", "Ray", conversationIndex.ToString());
 
 		}
 	}
@@ -60,7 +60,7 @@ public class TanningSalonAssistant : MonoBehaviour {
 		//TODO: Animate transition between waiver
 		waiver.SetActive (false);
 		gameObject.SetActive (true);
-		GetComponent<PlayerBehavior>().trackEvent(4, "SIGNED WAIVER", "none", "Ray");
+		GetComponent<PlayerBehavior>().trackEvent(4, "SIGNED WAIVER", "none", "Ray", conversationIndex.ToString());
 		signedWaiver = true;
 		continueButton.SetActive (true);
 		bed.SetTrigger("open");
@@ -76,7 +76,7 @@ public class TanningSalonAssistant : MonoBehaviour {
 		waiver.SetActive (false);
 		gameObject.SetActive (true);
 		continueButton.SetActive (true);
-		GetComponent<PlayerBehavior>().trackEvent(4, "DECLINED WAIVER", "none", "Ray");
+		GetComponent<PlayerBehavior>().trackEvent(4, "DECLINED WAIVER", "none", "Ray", conversationIndex.ToString());
 	}
 
 }

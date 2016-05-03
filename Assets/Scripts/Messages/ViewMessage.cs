@@ -43,7 +43,7 @@ public class ViewMessage : MonoBehaviour {
 					inbox.epilogue.cue ();
 					//TODO: Track Epilogue
 					//BELIEF ID = Unhealthy, Healthy, 
-					GetComponent<PlayerBehavior>().trackEvent(6, inbox.epilogue.endingType.ToString(),r.belief, characterPath);
+					GetComponent<PlayerBehavior>().trackEvent(6, inbox.epilogue.endingType.ToString(),r.belief, characterPath,"none");
 
 				}
 
@@ -55,7 +55,7 @@ public class ViewMessage : MonoBehaviour {
 
 				player.removeMessage (r.messageIndex);
 				string p = getStringFromResponse(r.path,1);
-				GetComponent<PlayerBehavior>().trackEvent(2, "IGNORE","none", p);
+				GetComponent<PlayerBehavior>().trackEvent(2, "IGNORE","none", p, "none");
 				Debug.Log("Removing offer with path: " + p);
 				int offerCount = PlayerPrefs.GetInt(p + "_offers", 0);
 				PlayerPrefs.SetInt(p + "_offers", offerCount - 1);
@@ -73,7 +73,7 @@ public class ViewMessage : MonoBehaviour {
 
 				player.removeMessage (r.messageIndex);
 				string p = getStringFromResponse(r.path,0);
-				GetComponent<PlayerBehavior>().trackEvent(2, "ACCEPT", "none", p);
+				GetComponent<PlayerBehavior>().trackEvent(2, "ACCEPT", "none", p, "none");
 				Debug.Log("Removing offer with path: " + p);
 				int offerCount = PlayerPrefs.GetInt(p + "_offers", 0);
 				PlayerPrefs.SetInt(p + "_offers", offerCount - 1);
@@ -105,8 +105,15 @@ public class ViewMessage : MonoBehaviour {
 			});
 		} else {
 			response.GetComponent<Button> ().onClick.AddListener (() => {
-				respond (r.path, r.messageIndex, r.belief);
-				player.previewInbox.checkIfEmpty();
+				//dialog_belief_id
+				if (r.dialog_id != null) {
+					respond (r.path, r.messageIndex, r.belief, r.dialog_id);
+				}
+				else {
+					respond (r.path, r.messageIndex, r.belief, "none");
+
+				}
+					player.previewInbox.checkIfEmpty();
 			});	
 
 			}
@@ -186,9 +193,9 @@ public class ViewMessage : MonoBehaviour {
 		return false;
 	}
 */
-	void respond(string path, int index, string belief) {
+	void respond(string path, int index, string belief, string dialog) {
 		//TODO: Path update for just character
-		GetComponent<PlayerBehavior>().trackEvent(2, "DLG", belief, StringArrayFunctions.getMessage(path)[0]);
+		GetComponent<PlayerBehavior>().trackEvent(2, "DLG", belief, StringArrayFunctions.getMessage(path)[0],dialog);
 		player.takeAction (true);
 		player.removeMessage(index);
 		//TODO: Check threshold requirements if needed in mid conversation to add/remove response time

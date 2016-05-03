@@ -65,9 +65,9 @@ public class IncomingMessage : MonoBehaviour {
 			int eventId = 0;
 			string subtype = "";
 			string characterSendingMessage = "";
+			string dialog_id = "none";
 			switch (message.sender) {
 		case "tanning":
-//			GetComponent<PlayerBehavior>().trackEvent(3, StringArrayFunctions.getMessage(message.path)[1], message.belief, "Ray");
 			characterSendingMessage = "Ray";
 			eventId = 3;
 			subtype = StringArrayFunctions.getMessage(message.path)[1];
@@ -76,7 +76,6 @@ public class IncomingMessage : MonoBehaviour {
 
 			break;
 		case "love":
-//			GetComponent<PlayerBehavior>().trackEvent(3, "LOVE", "none", "Cupid");
 			eventId = 3;
 			subtype = "Love";
 			characterSendingMessage = "Cupid";
@@ -86,8 +85,6 @@ public class IncomingMessage : MonoBehaviour {
 			break;
 		case "exam":
 			message.belief = "EE";
-
-//			GetComponent<PlayerBehavior>().trackEvent(3, "EXAM", message.belief,"Doctor");
 			characterSendingMessage = "Dermatologist";
 			subtype = "Exam";
 			eventId = 3;
@@ -98,12 +95,10 @@ public class IncomingMessage : MonoBehaviour {
 			characterSendingMessage = "Larry";
 			eventId = 3;
 			subtype = "Piercing";
-//			GetComponent<PlayerBehavior>().trackEvent(3, "PIERCING","none", "Larry");
 			msg.GetComponent<ViewMessage>().alias.text = "Larry's Piercing Parlor";
 			msg.GetComponent<ViewMessage>().profilePic.sprite = Resources.Load<Sprite>("Home/pierced_larry");
 			break;
 		case "haircut":
-//			GetComponent<PlayerBehavior>().trackEvent(3, "HAIRCUT","none", "Emerald");
 			subtype = "Haircut";
 			eventId = 3;
 			characterSendingMessage = "Emerald";
@@ -113,8 +108,10 @@ public class IncomingMessage : MonoBehaviour {
 		default:
 			eventId = 1;
 			subtype = "DLG";
+			if (message.dialog_id != null) {
+				dialog_id = message.dialog_id;
+			}
 			characterSendingMessage = message.sender;
-//			GetComponent<PlayerBehavior>().trackEvent(1, "DLG", message.belief, message.sender);
 			msg.GetComponent<ViewMessage>().character.assign(message.sender);
 			msg.GetComponent<ViewMessage>().character.assign(character);
 			msg.GetComponent<ViewMessage>().alias.text = msg.GetComponent<ViewMessage>().character.name;
@@ -125,10 +122,8 @@ public class IncomingMessage : MonoBehaviour {
 
 		}
 
-//		GetComponent<PlayerBehavior>().trackEvent(eventId, subtype,message.belief,characterSendingMessage);
-		player.trackEvent(eventId, subtype,message.belief,characterSendingMessage);
+		player.trackEvent(eventId, subtype,message.belief,characterSendingMessage, dialog_id);
 		Debug.Log("Submitting Event");
-		//GetComponent<PlayerBehavior>().trackEvent(1, "test","none","silly");
 
 		msg.transform.SetParent(this.gameObject.transform.parent.parent.parent.parent, false);
 		this.transform.parent.gameObject.SetActive(false);

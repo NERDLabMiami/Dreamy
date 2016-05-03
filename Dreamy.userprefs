@@ -2,16 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Messages/ViewMessage.cs">
     <Files>
+      <File FileName="Assets/Scripts/Messages/ViewMessage.cs" Line="116" Column="41" />
       <File FileName="Assets/Scripts/Helpers/AvatarColorOption.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Dating/Match.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Messages/ViewMessage.cs" Line="46" Column="87" />
       <File FileName="Assets/Wink.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Helpers/AvatarOption.cs" Line="1" Column="1" />
       <File FileName="Assets/Leslie.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Helpers/CategorySelector.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Dating/Character.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Messages/IncomingMessage.cs" Line="73" Column="62" />
-      <File FileName="Assets/Scripts/Messages/Classes/Message.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Messages/IncomingMessage.cs" Line="112" Column="4" />
+      <File FileName="Assets/Scripts/Messages/Classes/Message.cs" Line="13" Column="26" />
       <File FileName="Assets/Scripts/Mini Games/Love/CupidControl.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Mini Games/Love/CupidTalk.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Helpers/AvatarWizard.cs" Line="1" Column="1" />
@@ -20,13 +20,15 @@
       <File FileName="Assets/Scripts/Helpers/ItemSelector.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Helpers/ItemFolderSelector.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Messages/ResponseOption.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Mini Games/TanLines/TanningSalonAssistant.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Mini Games/TanLines/TanningSalonAssistant.cs" Line="79" Column="110" />
       <File FileName="Assets/Scripts/Helpers/Career.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Mini Games/TanLines/TanningBed.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Mini Games/Dermatologist/Dermatologist.cs" Line="1" Column="1" />
-      <File FileName="Assets/PlayerBehavior.cs" Line="71" Column="73" />
+      <File FileName="Assets/Scripts/Mini Games/TanLines/TanningBed.cs" Line="72" Column="46" />
+      <File FileName="Assets/Scripts/Mini Games/Dermatologist/Dermatologist.cs" Line="85" Column="104" />
+      <File FileName="Assets/PlayerBehavior.cs" Line="29" Column="123" />
       <File FileName="Assets/Scripts/Messages/Inbox.cs" Line="42" Column="44" />
       <File FileName="Assets/Scripts/Messages/Epilogue.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Helpers/Player.cs" Line="253" Column="1" />
+      <File FileName="Assets/Scripts/Messages/Classes/Response.cs" Line="16" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

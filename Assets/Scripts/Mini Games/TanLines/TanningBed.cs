@@ -46,13 +46,13 @@ public class TanningBed : MonoBehaviour {
 			switch(selectedConversation) {
 			case 0:
 				//APB 1
-				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "APB1", "Ray");
+				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "APB1", "Ray", selectedConversation.ToString());
 				assistant.dialogue.text = "Looking good! We've got a great promotion until the end of the month if you want to keep it that way.";
 				assistant.response.text = "Thanks!";
 				break;
 			case 1:
 				//HB 5
-				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "HB5", "Ray");
+				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "HB5", "Ray", selectedConversation.ToString());
 				assistant.dialogue.text = "Hope you enjoyed your stay. Come back and tan all you want, our facilities are completely safe!";
 				assistant.response.text = "Thanks!";
 				break;
@@ -63,13 +63,13 @@ public class TanningBed : MonoBehaviour {
 			switch(selectedConversation) {
 			case 0:
 				//APB 1
-				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "APB1", "RAY");
+				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "APB1", "RAY", selectedConversation.ToString());
 				assistant.dialogue.text = "Great tan, you look super toned! Have a nice day!";
 				assistant.response.text = "Thanks!";
 				break;
 			case 1:
 				//HB7
-				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "HB7", "RAY");
+				assistant.GetComponent<PlayerBehavior>().trackEvent(4, "0", "HB7", "RAY", selectedConversation.ToString());
 				assistant.dialogue.text = "You might have stayed in there too long, good thing you're young!";
 				assistant.response.text = "Good to know!";
 				break;

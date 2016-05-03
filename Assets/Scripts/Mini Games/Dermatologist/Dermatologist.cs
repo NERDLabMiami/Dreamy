@@ -55,15 +55,15 @@ public class Dermatologist : MonoBehaviour {
 					Debug.Log("USING LOW1");
 					dermatologistDialog.text = player.getDermatologistMessage(conversationIndex,"LOW1");
 					playerDialog.text = player.getDermatologistResponse(conversationIndex, "LOW1");
-					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "APH11", "DERMATOLOGIST");
-					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "HT51", "DERMATOLOGIST");
+					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "APH11", "DERMATOLOGIST", selectedConversation.ToString());
+					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "HT51", "DERMATOLOGIST", selectedConversation.ToString());
 				}
 				else {
 					Debug.Log("USING LOW2");
 					dermatologistDialog.text = player.getDermatologistMessage(conversationIndex,"LOW2");
 					playerDialog.text = player.getDermatologistResponse(conversationIndex, "LOW2");
-					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "APH11", "DERMATOLOGIST");
-					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "HT51", "DERMATOLOGIST");
+					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "APH11", "DERMATOLOGIST", selectedConversation.ToString());
+					GetComponent<PlayerBehavior>().trackEvent(5,conversationIndex.ToString(), "HT51", "DERMATOLOGIST", selectedConversation.ToString());
 				}					
 				break;
 			case 2:
@@ -74,15 +74,15 @@ public class Dermatologist : MonoBehaviour {
 					Debug.Log("USING HIGH1");
 					dermatologistDialog.text = player.getDermatologistMessage(conversationIndex, "HIGH1");
 					playerDialog.text = player.getDermatologistResponse(conversationIndex, "HIGH1");
-					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "APH12", "DERMATOLOGIST");
-					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "HT52", "DERMATOLOGIST");
+					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "APH12", "DERMATOLOGIST", selectedConversation.ToString());
+					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "HT52", "DERMATOLOGIST", selectedConversation.ToString());
 				}
 				else {
 					Debug.Log("USING HIGH2");
 					dermatologistDialog.text = player.getDermatologistMessage(conversationIndex, "HIGH2");
 					playerDialog.text = player.getDermatologistResponse(conversationIndex, "HIGH2");
-					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "APH12", "DERMATOLOGIST");
-					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "HT52", "DERMATOLOGIST");
+					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "APH12", "DERMATOLOGIST", selectedConversation.ToString());
+					GetComponent<PlayerBehavior>().trackEvent(5, conversationIndex.ToString(), "HT52", "DERMATOLOGIST", selectedConversation.ToString());
 				}
 				break;
 			}

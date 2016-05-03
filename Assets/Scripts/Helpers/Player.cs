@@ -236,16 +236,17 @@ public class Player : MonoBehaviour {
 						message.sender = messageParts[0];
 						message.passage = messageParts[1];
 						message.subject = json[message.sender][message.passage]["subject"];
+					if (json[message.sender][message.passage]["belief_id"] != null) {
 						message.belief = json[message.sender][message.passage]["belief_id"];
-					//TODO: Integrate dialog id for subtype
-					//message.subtype = json[message.sender][message.passage]["belief_dialog_id"];
+						message.dialog_id = json[message.sender][message.passage]["belief_dialog_id"];
+					}
 						message.alias = PlayerPrefs.GetString(message.sender, "");
 						message.subject = message.subject.Replace("%C", message.alias);
 						
 						message.body = json[message.sender][message.passage]["message"];
 						JSONNode responses = json[message.sender][message.passage]["responses"];
 						for (int j = 0; j < responses.Count; j++) {
-						Response r = new Response(responses[j]["path"], responses[j]["response"], responses[j]["time"].AsInt, i, responses[j]["belief_id"]);
+						Response r = new Response(responses[j]["path"], responses[j]["response"], responses[j]["time"].AsInt, i, responses[j]["belief_id"], responses[j]["belief_dialog_id"]);
 							message.responses.Add(r);
 						}
 
